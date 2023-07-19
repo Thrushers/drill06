@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block nav %}
+{% load static %}
+    <nav class="navbar bg-dark navbar-expand-lg sticky-top bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="{% static 'media/El-auto-doble-cero.png' %}" alt="Bootstrap" width="110" height="50">
+            <span class="navbar-toggler-icon"></span>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                </li>
+            {%if user.is_authenticated %}
+            {%if user_senior %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/addform">Vehiculos</a>
+                </li>
+            {%endif%}
+            {%if user_junior %}    
+                <li class="nav-item">
+                    <a class="nav-link" href="/listar">Lista</a>
+                </li>
+            
+            {%endif%}
+            {%endif%}    
+               </ul>
+
+            </div>
+            {%if user.is_authenticated %}
+                    <ul class="nav-item">
+                        <a class="nav-link" href="#">Hola, {{user.username}}</a>
+                    </ul>        
+                    <ul class="nav-item" >
+                        <a class="nav-limk" href="/logout">Salir</a>
+                    </ul>
+                    
+                
+                {%else%}
+                    <li class="nav-item" id="botones">
+                        <A type="button" class="btn btn-outline-primary" href="/login">Ingresar</A>
+                        <a type="button" class="btn btn-outline-success" href="/registro">Registro</a>  
+                    </li>
+            {%endif%}
+          </div>
+        </div>
+      </nav>
+
+
+{% endblock nav %}
+
+{% block content %}
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="static\media\4runner.jpg" class="d-block w-100" width="110" height="730">
+        </div>
+        <div class="carousel-item">
+            <img src="static\media\corvette.jpg" class="d-block w-100" width="110" height="730">
+        </div>
+        <div class="carousel-item">
+            <img src="static\media\F150-Lightning.jpg" class="d-block w-100" width="110" height="730">
+        </div>
+        <div class="carousel-item">
+            <img src="static\media\fiat-gr-punto.jpg" class="d-block w-100" width="110" height="730">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+
+

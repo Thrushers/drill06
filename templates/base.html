@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %} ">
+
+    <title>Vehiculos APP</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+</head>
+<body>
+
+    {% block nav %}
+    {% endblock nav %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer %}
+    {% endblock footer %}
+
+    
+</body>
+</html>

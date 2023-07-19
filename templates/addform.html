@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% block content%}
+       <div class="addform">
+            <div class="form">   
+                <h3 class="title">Ingresar Vehiculo</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mt-3" >
+                        <label>Marca:</label>
+                        <br>
+                        {{ form.marca}}
+                    </div>
+                    <div class="form-group mt-3" >
+                        <label>Modelo:</label>
+                        <br>
+                        {{ form.modelo}}    
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>Serial Carroceria: </label>
+                        <br>
+                        {{ form.serial_carroceria}}
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>Serial Motor: </label>
+                        <br>
+                        {{ form.serial_motor}}
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>Categoria: </label>
+                        <br>
+                        {{ form.categoria}}
+                    </div>
+                    <div class="form-group mt-3" >
+                        <label>Precio: </label>
+                        <br>
+                        {{ form.precio}}
+                    </div>
+                    <input type="submit" class="submitBtn" value="Enviar">
+
+                </form>
+            </div>
+        </div>
+{% endblock %}
